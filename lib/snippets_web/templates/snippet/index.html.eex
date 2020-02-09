@@ -1,0 +1,16 @@
+<%= render "form.html", Map.put(assigns, :action, Routes.snippet_path(@conn, :create)) %>
+
+<%# <%= Enum.map(get_flash(@conn), fn {flash_key, flash_message} -> %1> %>
+<%#   <div role="alert" class="bg-red-200 border-l-4 border-red-600 text-red-600 p-4 m-4 rounded shadow" role="alert"> %>
+<%#     <p class="font-bold"><%= flash_key %1></p> %>
+<%#     <p><%= get_flash(@conn, :error) %1></p> %>
+<%#   </div> %>
+<%# <% end) %1> %>
+
+<%= for snippet <- @snippets do %>
+  <div class="bg-white shadow rounded m-4 p-4">
+    <p class="text-gray-:00"><%= to_date(snippet.inserted_at) %>
+    <%= to_html(snippet.content) %>
+  </div>
+<% end %>
+

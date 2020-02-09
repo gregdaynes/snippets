@@ -1,0 +1,18 @@
+<div class="leading-loose">
+<%= form_for @changeset, @action, [class: "bg-white rounded shadow m-4 p-4"], fn f -> %>
+  <%= if @changeset.action do %>
+    <div>
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :content, [class: "block text-sm text-gray-00"] %>
+  <%= textarea f, :content, [class: "w-full px-4 py-1 text-gray-700 bg-gray-200 rounded", placeholder: "What would you like to say?"] %>
+  <%= error_tag f, :content %>
+
+  <div>
+    <%= submit "Save", [class: "px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"] %>
+  </div>
+<% end %>
+</div>
+
