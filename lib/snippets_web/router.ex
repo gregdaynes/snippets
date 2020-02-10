@@ -12,7 +12,7 @@ defmodule SnippetsWeb.Router do
   scope "/", SnippetsWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
-    resources "/snippets", SnippetController, only: [:index, :new, :create]
+    # get "/", PageController, :index
+    resources "/", SnippetController, only: [:index, :new, :create]
   end
 end
