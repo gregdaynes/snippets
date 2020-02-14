@@ -44,7 +44,8 @@ defmodule Snippets.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:earmark, "~> 1.4.0"},
-      {:tzdata, "~> 1.0.1"}
+      {:tzdata, "~> 1.0.1"},
+      {:pbkdf2_elixir, "~> 1.0"}
     ]
   end
 

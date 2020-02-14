@@ -7,6 +7,7 @@ defmodule SnippetsWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug SnippetsWeb.Auth
   end
 
   scope "/", SnippetsWeb do
@@ -14,5 +15,7 @@ defmodule SnippetsWeb.Router do
 
     get "/", PageController, :index
     resources "/snippets", SnippetController, only: [:index, :new, :create]
+    resources "/users", UserController, only: [:index, :show, :create, :new]
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 end
